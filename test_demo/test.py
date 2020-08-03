@@ -45,3 +45,4 @@ if __name__ == '__main__':
     print(lang.index("s"))
     #前包括后不包括
     print(lang[3:8])
+    
