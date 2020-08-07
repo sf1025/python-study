@@ -1,4 +1,4 @@
-# coding:utf8
+# coding:utf-8
 #!/usr/bin/env python
 #上面的写法是防止操作系统用户没有将python装在默认的/usr/bin/env路径里. 当系统看到这一行的时候, 首先会到env设置路径里查找
 #python的安装路径, 在调用对应路径下的解释器完成操作.#!/usr/bin/env相当于写死了路径, 推荐使用#!/usr/bin/env python
