@@ -31,15 +31,65 @@ if __name__ == "__main__":
     print(list(reversed(alist)))
     print(list(reversed("abcdefg")))
 
-#序列的基本操作
-lst = ["python", "php", "c++"]
-print(len(lst))
-#+--连接两个序列
-print(alist+lst+lst)
-#*--重复元素
-print(lst*3)
-#in 判断元素是否在序列中
-print("python" in lst)
-print("www" in lst)
-#max()和min()--按照元素的字典顺序进行比较
-print(max(lst),min(alist))
+    #序列的基本操作
+    lst = ["python", "php", "c++"]
+    print(len(lst))
+    #+--连接两个序列
+    print(alist+lst+lst)
+    #*--重复元素
+    print(lst*3)
+    #in 判断元素是否在序列中
+    print("python" in lst)
+    print("www" in lst)
+    #max()和min()--按照元素的字典顺序进行比较返回列表的最大最小值
+    print(max(lst),min(alist))
+
+    #向列表中追加字符串"like", append()向列表后面追加值
+    lst.append("like")
+    print(lst)
+    lst.append(100)
+    print(lst)
+    #append方法等效于a[len(a:)]=[x]
+    lst[len(lst):]=[3]    #len(lst)即获取lst的长度
+    print(lst)
+    lst[6:]=["sssss",222,333]
+    print(lst)
+
+    #list.extend(L)函数, 将L所有元素加入到list后面
+    la=[1, 2, 3]
+    lb=["qqq", "www", "eee"]
+    la.extend(lb)
+    print(la)
+    #如果list.extend(str)的时候, 字符串被以字符为单位拆开, 追加到list里面
+    b="abc"
+    la.extend(b)
+    print(la)
+    #如果extend的对象是数值类型, 则报错
+    # la.extend(555)
+    #list.extend(L) 等效于 list[len(list):] = L ，L是待并入的列表。
+    la[len(la):]="demo"
+    print(la)
+    # iterable--可迭代的  iterator--迭代器
+    #用内建函数hasattr()判断一个字符串是否是可迭代的
+    atr = "python"
+    print(hasattr(atr, '__iter__'))
+    clst = [1, 2]
+    print(hasattr(clst, '__iter__'))
+    print(hasattr(3, '__iter__'))
+    #列表的重要特性: 列表是可以修改的.这种修改, 不是复制一个新的, 而是在原地进行修改.
+    #原地修改没有返回值, 无法赋值给某个变量
+    #append是整建制的追加, extend是个体化扩编
+    clst.append([1, 5, 6])
+    print(clst, len(clst))
+    clst.extend([4, 5, 6])
+    print(clst, len(clst))
+
+    #count函数: 获取列表中重复元素出现的次数
+    print(clst.count(1))
+    #没有重复返回0
+    print(clst.count(3))
+    #index函数: 获取列表中元素的索引
+    print(clst.index(5))
+    #不能存在会报错
+    # print(clst.index(3))
+
