@@ -93,3 +93,41 @@ if __name__ == "__main__":
     #不能存在会报错
     # print(clst.index(3))
 
+    #list.insert(i, x)函数: 第一个参数是函数的插入列表位置(索引)--插入索引i的前面位置, 第二个是需要插入的元素
+    dlst=["www", "ccc", "ddd"]
+    dlst.insert(1, 666)
+    print(dlst)
+    #a.append(x)等效于a.insert(len(dlst), x), 如果第一个参数超过了最大索引值, 都是自动追加在末尾
+    #dlst.insert(len(dlst), 777)
+    dlst.append(777)
+    print(dlst)
+
+    #list.remove(x)和list.pop([i])--删除元素的两种方法
+    #仔细观察, 变量的名字是lst而不是list, 最好不要用list作为变量名字, 因为他是Python中内置的对象类型的名字.
+    dlst.remove("ccc")  #直接删除列表中的元素, 原地删除没有返回值, 元素不存在会报错
+    if "ddd" in dlst:
+        dlst.remove("ddd")
+        print(dlst)
+    else:
+        print("ddd is not in dlst")
+    #.pop([i])函数-[i]参数可选, 如果不写, 默认删除最后一个, 并将删除的元素作为结果返回
+    print(dlst.pop(2))
+    print(dlst)
+    print(dlst.index(666))
+    #简单总结: 1.list.remove(x)中的参数是列表中元素, 且对列表原地修改, 无返回值
+    #2. list.pop([i])中的i是列表中元素的索引值, 可选.为空则删除列表最后一个,否则删除
+    #索引为i的元素, 并将元素作为返回值
+
+    #a.reverse()函数--该函数没有返回值
+    dlst.reverse()
+    print(dlst)
+
+
+#总结列表和字符串:
+# 不管是组成列表的元素, 还是组成字符串的字符,都可以用从左到右, 一次用0,1,2,3,....这样的方式
+#建立索引. 而要得到一个或多个元素, 可以使用切片
+
+#区别:
+#列表和字符串的区别是: 列表式可以改变的, 字符串是不可变的. 这个怎么理解呢? 首先看对列表的这些操作,
+#其根源在于列表可以进行修改, 即列表是可变的.
+
