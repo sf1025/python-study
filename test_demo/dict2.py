@@ -66,6 +66,31 @@ help(dict.values)
 #如果要实现多键值对或者键或者值的循环, 用迭代器效率高一些
 print(x.items(), x.keys(), x.values())
 
+#D.pop(k, [,d])是以字典的键为参数, 删除指定键的键值对
+print(x.pop("name"), x)#删除键, 返回值
+
+#D.popitem()一次只能随机删除一对键值对, 并以一个元祖的方式返回
+print(x.popitem(), x)
+print(x.popitem(), x)
+#print(x.popitem(), x)#如果字典为空,报错:'popitem(): dictionary is empty'
+
+#D.update([E, ]**F)更新字典, 没有返回值
+d1 = {"lang":"python"}
+d2 = {"age":11}
+#将字典d2更新到了d1中, d2不受影响
+d1.update(d2)
+print(d2, d1)
+#参数以元组为元素,每个元组是一个键值对
+d2.update([("item","sss"), ("home", "sh")])
+print(d2)
+
+#总结
+#1. 能够索引的, list/str, 其中的元素可以重复
+#2. 可变的, list/dict, 其中的元素可以修改
+#3. 不可变的, str/int, 不能原地修改
+#4. 无索引序列的, dict, 其中的元素(键值对)没有排列顺序
+
+
 
 
 
