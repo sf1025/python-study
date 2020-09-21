@@ -1,7 +1,7 @@
 #coding: utf-8
 #!usr/bin/env python
 if __name__ == "__main__":
-    f = open("15.txt")
+    f = open("15.txt", "r+")
     for line in f:
         print(line)
     for line2 in f:

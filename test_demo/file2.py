@@ -41,11 +41,12 @@ print(f.readline(),end="")
 f.seek(0)#回到文件开头
 print(f.readline())
 print(f.tell())#显示指针位置
+
 f.seek(4)#将位置固定在第四个字符之后
 print(f.readline())
 f.close()
 #whence的值
 #默认是0, 表示从文件开头开始计算指针偏移的量, 这时offset必须是大于等于0的整数
 #1时, 表示从当前位置开始计算偏移量, offset如果是负数, 表示当前位置向前移动, 正数表示向后移动
-#2时, 表示相对文件末尾移动
+#2时, 表示相对文件末尾移动.
 
