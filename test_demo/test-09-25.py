@@ -70,5 +70,10 @@ if __name__ == "__main__":
     print(hasattr(id, '__doc__'))
     print(getattr(id, '__doc__'))
 
+    #实例: 在type()函数提供对象的类型时, 还可以使用isinstance()函数测试对象, 以确定它是否是某个特定类型或者是定制类的实例
+    print(isinstance.__doc__)
 
+    #子类: 关于子类, 有一个"继承"的概念. 在类这一级别, 可以根据一个类来定义另一个类, 同样的, 这个新类会按照层次化的方式继承属性.
+    #Python甚至支持多重继承, 多重继承意味着可以用多个父类来定义一个类, 这个新类继承了多个父类. issubclass()可以查看一个类是不是继承了另一个类
+    print(issubclass.__doc__)
 
