@@ -58,5 +58,37 @@ if __name__ == "__main__":
     r = convert(num, mysum)
     print(r)
 
+    #嵌套函数
+    #函数不仅可以作为对象传递, 还能再函数里面嵌套一个函数 例如:
+    def foo():
+        def bar():
+            print("bar is running")
+        print("foo is running")
+    g = foo()
+    print(g)
+    #上面的bar()函数没有被调用, 在foo()函数里面显示调用:
+    def aoo():
+        a = 1
+        def car():
+            b = a+1
+            print("car is running")
+            print("b =", b)
+        car()
+        print("aoo is running")
+        print("a =", a)
+    aoo()
+    #car()  会报错:name 'car' is not defined 因为car()定义在aoo()函数内, , 他的生效范围只在aoo()函数体之内, 也就是作用域是aoo()范围.
+    #在函数car()之外aoo()之内定义了a=1,在car()中可以顺利调用.
+
+    def make(n):
+        def action(x):
+            return x**n
+        return action
+    #在make函数中, 返回的是action()函数对象
+    f = make(3)
+    print(f) #f所引用的对象是一个函数对象--action()函数对象, print(f)就是打印这个函数对象的信息.
+    m = f(5)
+    print(m)
+
 
 
