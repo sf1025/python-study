@@ -103,7 +103,14 @@ if __name__ == "__main__":
         for x in range(2,n+1):
             is_prime = True
             for y in range(2, int(x**0.5 + 1)): #x**0.5相当于math.sqrt(x)
-
+                if x % y == 0:
+                    is_prime = False
+                    break
+            if is_prime:
+                primes_list.append(x)
+        print(primes_list)
+    max = int(input('Find primes up to:'))
+    find_primes(max)
 
 
 
