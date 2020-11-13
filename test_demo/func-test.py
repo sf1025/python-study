@@ -111,6 +111,13 @@ if __name__ == "__main__":
         print(primes_list)
     max = int(input('Find primes up to:'))
     find_primes(max)
+    #1. 尽量不要使用全局变量
+    #2. 如果参数是可变类型数据, 在函数内不要修改
+    #3. 给个函数的功能和目标要单纯.
+    #4. 函数的代码行数尽量少
+    #5. 函数的独立性越强越好, 不要更其他的外部东西产生关联
+
+
 
 
 
