@@ -40,4 +40,25 @@ for pet in pets:
 #python不检查传入对对象的类型, 这种方式被称之为"隐式类型(laten typing)"或者"结构式类型(structurcal typing)", 也被俗称为"鸭子类型"
 #鸭子类型就意味着可以向任何对象发送任何消息, 语言只关心该对象能否接收消息, 不强求该对象是否某一特定的类型
 
+#私有化
+class ProtectMe:
+    def __init__(self):
+        self.me = "qweer"
+        self.__name = "iii"#私有化方法: 在准备私有化的属性(方法或者数据)前面加__
+
+    def __python(self):
+        print("I love python")
+
+    @property
+    def name(self):
+        return self.__name
+
+    def code(self):
+        print("Which language do you like")
+        self.__python()
+
+p = ProtectMe()
+# print(p.me, p.__name) 'ProtectMe' object has no attribute '__name'
+print(p.name)
+print(p.code(), p.__python())
 
